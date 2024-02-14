@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: rgb(0, 0, 0);
+  }
+  .cabina {
+    width: 140px;
+    height: 70px;
+    background-color: rgba(222, 219, 238, 1); /* Este será el tercer color, visible en la parte inferior */
+    border-radius: 20% 20% 0% 0%;
+    transform: rotate(7deg);
+    position: relative;
+    top: 20px;
+    left: 120px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    overflow: hidden;
+  }
+  
+  .cabina::before,
+  .cabina::after {
+    content: '';
+    display: block;
+    width: 100%;
+  }
+  
+  .cabina::before {
+    height: 35%; /* Ajusta la altura para el segundo color */
+    background-color: rgba(98, 218, 250, 1); /* Segundo color */
+  }
+  
+  .cabina::after {
+    height: 70%; /* Ajusta la altura para el tercer color, dejando espacio para el color de fondo */
+    background-color: rgba(210, 208, 232, 1); /* Tercer color */
+    position: relative;
+    top: 25%; /* Posiciona el pseudo-elemento ::after hacia abajo para dejar espacio para el color de fondo en la parte inferior */
+  }
+  
+  
+ .base_barco {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    background: rgba(255, 240, 173, 1);
+    border-radius: 1% 1% 150px 150px / 10% 10% 80% 90%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(7deg);
+    overflow: hidden;
+   border: 1px solid rgba(0, 0, 0, 1);
+  }
+  .base_barco::before {
+    content: '';
+    position: relative;
+    margin-top: 10%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ajusta este valor para cambiar dónde se realiza la división de colores */
+    background: rgba(6, 128, 175, 1); /* Color de fondo para la mitad inferior */
+    border-radius: 0% 0% 150px 150px / 10% 10% 80% 90%; /* Mantiene la curvatura en la parte inferior */
+  }
+  
+  
+
+
