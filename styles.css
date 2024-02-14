@@ -37,6 +37,64 @@ body {
     position: relative;
     top: 25%; /* Posiciona el pseudo-elemento ::after hacia abajo para dejar espacio para el color de fondo en la parte inferior */
   }
+  .ventanas {
+    position: relative;
+    top : -11px;
+    display: flex;
+    justify-content: space-evenly; /* Distribuye los rectángulos uniformemente */
+    align-items: center;
+    height: 0%; /* Asegura que el contenedor .rectangulos use toda la altura de .cabina */
+  }
+  
+  .ventanas::before,
+  .ventanas::after {
+    content: '';
+    width: 25px; /* Ancho de los rectángulos */
+    height: 15px; /* Altura de los rectángulos */
+    background-color: rgba(221, 221, 221, 1); /* Color negro para los rectángulos */
+    border-radius: 2px ;
+    border: 1px solid black;
+  }
+
+  .asta-bandera{
+    position: relative;
+    top : 27px;
+    left: 220px;
+    width: 8px;
+    height: 60px;
+    background: rgba(6, 128, 173, 1);
+    border-radius: 0% 0% 0% 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 25% 25% 0% 0%;
+  }
+  .bandera-manta{
+    position: relative;
+    top : 65px;
+    left: 228px;
+    width: 40px;
+    height: 30px;
+    background: rgba(255, 116, 143, 1);
+    border-radius: 10% 10% 10% 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .bandera-manta::before {
+    content: '';
+    position: relative;
+    margin-top: 95%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ajusta este valor para cambiar dónde se realiza la división de colores */
+    background: rgba(254, 86, 127, 1); /* Color de fondo para la mitad inferior */
+    border-radius: 0% 0% 10% 10%; /* Mantiene la curvatura en la parte inferior */
+  }
   
   
  .base_barco {
@@ -64,6 +122,28 @@ body {
     border-radius: 0% 0% 150px 150px / 10% 10% 80% 90%; /* Mantiene la curvatura en la parte inferior */
   }
   
-  
+  .baranda{
+    position: relative;
+    top : 160px;
+    left: 30px;
+    width: 70px;
+    height: 30px;
+    background: rgba(215, 211, 239, 1);
+    border-radius: 20% 20% 10% 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 1);
+    transform: rotate(7deg);
+  }
+  .baranda::before,
+.baranda::after {
+  content: '';
+  border-radius: 10% 10% 10% 10%;
+  width: 20px; /* Tamaño de los cuadrados negros */
+  height: 20px;
+  background-color: #000; /* Color negro para los cuadrados */
+}
 
 
