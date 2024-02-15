@@ -7,104 +7,59 @@ body {
     margin: 0;
     background: rgb(0, 0, 0);
   }
+
   .luna{
     display: inline-block;
     position: relative;
-     /* La luna aumenta y disminuye su tamaño en un ciclo de 6 segundos */
+    left: 400px;
     transition: all 0.4s ease;
     top : 80px;
-    width: 100px; /* Tamaño de la luna */
-  height: 100px; /* Tamaño de la luna */
-  background: radial-gradient(circle at 70% 30%, #f0e68c 0%, #bdb76b 70%, #808000 100%); /* Gradiente radial para simular la luna */
-  border-radius: 50%; /* Hace que el div sea un círculo perfecto */
-  cursor: pointer;
+    width: 100px; 
+    height: 100px; 
+    background: radial-gradient(circle at 70% 30%, #f0e68c 0%, #bdb76b 70%, #808000 100%);
+    border-radius: 50%; 
+    cursor: pointer;
   }
+
   .luna:hover {
-    transform: scale(1.2); /* Al pasar el mouse, la luna aumenta su tamaño en un 10% */
+    transform: scale(1.3); 
   }
+
   .content {
-    flex: 1; /* Permite que el contenido crezca y ocupe cualquier espacio que no esté tomado por la animación */
-    /* Estilos adicionales para tu contenido aquí */
+    flex: 1; 
   }
-  .wave-container {
-    height: 70%; /* Altura fija al 40% de la ventana del navegador */
-    width: 100%; /* Ocupa todo el ancho */
-  }
-  
-  .wave {
-    width: 100%; /* Asegura que la ola se extienda a todo el ancho del contenedor */
-    height: 100%; /* Altura fija de la ola dentro del contenedor */
-    background: rgba(4, 24, 101, 1);
-    animation: wave 3s ease-in-out infinite;
-  }
-  
-  @keyframes wave {
-    0%, 100% {
-      clip-path: polygon(
-        0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%
-      );
-    }
-    50% {
-      clip-path: polygon(
-        0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%
-      );
-    }
-  }
+
   .barco{
     justify-content: center;
     align-items: center;
     position: relative;
     top : 250px;
     animation: floatAndMove 6s ease-in-out infinite; 
+  }
 
-  }
-  .cabina {
-    width: 140px;
-    height: 70px;
-    background-color: rgba(222, 219, 238, 1); /* Este será el tercer color, visible en la parte inferior */
-    border-radius: 20% 20% 0% 0%;
-    transform: rotate(7deg);
+  .baranda{
     position: relative;
-    top: 20px;
-    left: 120px;
-    border: 1px solid rgba(0, 0, 0, 1);
-    overflow: hidden;
-  }
-  
-  .cabina::before,
-  .cabina::after {
-    content: '';
-    display: block;
-    width: 100%;
-  }
-  
-  .cabina::before {
-    height: 35%; /* Ajusta la altura para el segundo color */
-    background-color: rgba(98, 218, 250, 1); /* Segundo color */
-  }
-  
-  .cabina::after {
-    height: 70%; /* Ajusta la altura para el tercer color, dejando espacio para el color de fondo */
-    background-color: rgba(210, 208, 232, 1); /* Tercer color */
-    position: relative;
-    top: 25%; /* Posiciona el pseudo-elemento ::after hacia abajo para dejar espacio para el color de fondo en la parte inferior */
-  }
-  .ventanas {
-    position: relative;
-    top : -11px;
+    top : 160px;
+    left: 30px;
+    width: 70px;
+    height: 30px;
+    background: rgba(215, 211, 239, 1);
+    border-radius: 20% 20% 10% 10%;
     display: flex;
-    justify-content: space-evenly; /* Distribuye los rectángulos uniformemente */
+    justify-content: space-evenly;
     align-items: center;
-    height: 0%; /* Asegura que el contenedor .rectangulos use toda la altura de .cabina */
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 1);
+    transform: rotate(7deg);
   }
-  
-  .ventanas::before,
-  .ventanas::after {
+
+  .baranda::before,
+  .baranda::after {
     content: '';
-    width: 25px; /* Ancho de los rectángulos */
-    height: 15px; /* Altura de los rectángulos */
-    background-color: rgba(221, 221, 221, 1); /* Color negro para los rectángulos */
-    border-radius: 2px ;
+    border-radius: 10% 10% 10% 10%;
+    width: 20px; 
+    height: 20px;
+    background-color: #000; 
   }
 
   .asta-bandera{
@@ -122,6 +77,7 @@ body {
     border: 1px solid rgba(0, 0, 0, 1);
     border-radius: 25% 25% 0% 0%;
   }
+
   .bandera-manta{
     position: relative;
     top : 65px;
@@ -135,6 +91,7 @@ body {
     align-items: center;
     overflow: hidden;
   }
+
   .bandera-manta::before {
     content: '';
     position: relative;
@@ -142,13 +99,60 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Ajusta este valor para cambiar dónde se realiza la división de colores */
-    background: rgba(254, 86, 127, 1); /* Color de fondo para la mitad inferior */
-    border-radius: 0% 0% 10% 10%; /* Mantiene la curvatura en la parte inferior */
+    height: 100%; 
+    background: rgba(254, 86, 127, 1); 
+    border-radius: 0% 0% 10% 10%; 
+  } 
+  
+  .cabina {
+    width: 140px;
+    height: 70px;
+    background-color: rgba(222, 219, 238, 1); 
+    border-radius: 20% 20% 0% 0%;
+    transform: rotate(7deg);
+    position: relative;
+    top: 20px;
+    left: 120px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    overflow: hidden;
   }
-  
-  
- .base_barco {
+
+  .cabina::before,
+  .cabina::after {
+    content: '';
+    display: block;
+    width: 100%;
+  }
+
+  .cabina::before {
+    height: 35%; 
+    background-color: rgba(98, 218, 250, 1); 
+  }
+
+  .cabina::after {
+    height: 70%; 
+    background-color: rgba(210, 208, 232, 1); 
+    position: relative;
+    top: 25%; 
+  }
+  .ventanas {
+    position: relative;
+    top : -11px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 0%; 
+  }
+
+  .ventanas::before,
+  .ventanas::after {
+    content: '';
+    width: 25px; 
+    height: 15px; 
+    background-color: rgba(221, 221, 221, 1); 
+    border-radius: 2px ;
+  }
+  .base_barco {
     position: relative;
     width: 300px;
     height: 100px;
@@ -159,7 +163,7 @@ body {
     align-items: center;
     transform: rotate(7deg);
     overflow: hidden;
-   border: 1px solid rgba(0, 0, 0, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
   }
   .base_barco::before {
     content: '';
@@ -168,47 +172,44 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Ajusta este valor para cambiar dónde se realiza la división de colores */
-    background: rgba(6, 128, 175, 1); /* Color de fondo para la mitad inferior */
-    border-radius: 0% 0% 150px 150px / 10% 10% 80% 90%; /* Mantiene la curvatura en la parte inferior */
+    height: 100%; 
+    background: rgba(6, 128, 175, 1); 
+    border-radius: 0% 0% 150px 150px / 10% 10% 80% 90%; 
   }
-  
-  .baranda{
-    position: relative;
-    top : 160px;
-    left: 30px;
-    width: 70px;
-    height: 30px;
-    background: rgba(215, 211, 239, 1);
-    border-radius: 20% 20% 10% 10%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 1);
-    transform: rotate(7deg);
-  }
-  .baranda::before,
-.baranda::after {
-  content: '';
-  border-radius: 10% 10% 10% 10%;
-  width: 20px; /* Tamaño de los cuadrados negros */
-  height: 20px;
-  background-color: #000; /* Color negro para los cuadrados */
-}
 
 .wave-container {
-  height: 50vh; /* O cualquier altura fija o porcentual que prefieras */
-  width: 100%; /* El contenedor de la ola ocupa todo el ancho */
-  overflow: hidden; /* Oculta cualquier desborde de la ola */
+  height: 50vh; 
+  width: 100%; 
+  overflow: hidden; 
 }
+ 
+  .wave {
+    width: 100%; 
+    height: 100%; 
+    background: rgba(4, 24, 101, 1);
+    animation: wave 3s ease-in-out infinite;
+  }
+  
+  @keyframes wave {
+    0%, 100% {
+      clip-path: polygon(
+        0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%
+      );
+    }
+    50% {
+      clip-path: polygon(
+        0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%
+      );
+    }
+  }
+  
 
 @keyframes pulse {
   0%, 100% {
-    transform: scale(1); /* La luna comienza y termina en su tamaño original */
+    transform: scale(1); 
   }
   50% {
-    transform: scale(1.1); /* La luna aumenta su tamaño en un 10% en el punto medio de la animación */
+    transform: scale(1.1); 
   }
 }
 
